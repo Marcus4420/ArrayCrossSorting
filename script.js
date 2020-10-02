@@ -1,8 +1,23 @@
 //Data
-let data_1 = [594, 493, 169, 526, 184, 808, 329, 845, 995, 838];
-let data_2 = [792, 228, 14, 453, 68, 710, 503, 745, 596, 668];
+let data_1 = [];
+let data_2 = [];
 let biggest_numb = 0;
 let data_biggest = [];
+var data_length = window.prompt("How many integers?")
+
+
+
+
+function array_create(arr1, arr2) {
+  for (i = 0; i < data_length; i++) {
+    let numb = Math.floor(Math.random() * 1001);
+    arr1.push(numb);
+  }
+  for (k = 0; k < data_length; k++) {
+    let numb = Math.floor(Math.random() * 1001);
+    arr2.push(numb);
+  }
+}
 
 //Funktion til at udregne på forudgivet datasæt
 function data_handler(data1, data2) {
@@ -25,8 +40,16 @@ function data_handler(data1, data2) {
   }
 }
 
+
+
+//Kører array generation
+array_create(data_1, data_2);
+
+//Kører lineær sorting
 data_handler(data_1, data_2);
 
+
+//Visualiser i DOM
 document.getElementById("array_1").innerHTML = "Datasæt 1: " + JSON.stringify(data_1, null, 4)
 
 document.getElementById("array_2").innerHTML = "Datasæt 2: " + JSON.stringify(data_2, null, 4)
