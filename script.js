@@ -4,17 +4,18 @@ let data_2 = [];
 let biggest_numb = 0;
 let data_biggest = [];
 var data_length = window.prompt("How many integers?")
+var data_range = window.prompt("The highest integer allowed in the range?")
 
 
 
 
 function array_create(arr1, arr2) {
   for (i = 0; i < data_length; i++) {
-    let numb = Math.floor(Math.random() * 1001);
+    let numb = Math.floor(Math.random() * data_range + 1);
     arr1.push(numb);
   }
   for (k = 0; k < data_length; k++) {
-    let numb = Math.floor(Math.random() * 1001);
+    let numb = Math.floor(Math.random() * data_range + 1);
     arr2.push(numb);
   }
 }
@@ -55,4 +56,4 @@ document.getElementById("array_1").innerHTML = "Datasæt 1: " + JSON.stringify(d
 document.getElementById("array_2").innerHTML = "Datasæt 2: " + JSON.stringify(data_2, null, 4)
 
 
-document.getElementById("array").innerHTML = "Alle mulige kombinationer, sorteret fra lav til høj: " + JSON.stringify(data_biggest, null, 4)
+document.getElementById("array").innerHTML = "All the possible combinations across the arrays, sorted from lowest to highest integer.: " + JSON.stringify(data_biggest, null, 4)
